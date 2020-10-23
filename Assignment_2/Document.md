@@ -8,3 +8,7 @@
 - runnung time
 - average tardiness
 - number of tardy jobs
+
+# Question
+1. tabu size 的決定
+2. GA的設計

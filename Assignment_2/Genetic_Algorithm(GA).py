@@ -1,15 +1,3 @@
-# -*- coding: utf-8 -*-
-'''
-Author: cheng-man wu
-LinkedIn: www.linkedin.com/in/chengmanwu
-Github: https://github.com/wurmen
-==============================================================
-Soving single-machine total weighted tardiness problem. 
-The objective function is to minimize the total weighted tardiness. 
-==============================================================
-'''
-# importing required modules
-#import os
 
 import numpy as np
 import time
@@ -28,7 +16,7 @@ crossover_rate=float(input('Please input the size of Crossover Rate: ') or 0.8) 
 mutation_rate=float(input('Please input the size of Mutation Rate: ') or 0.1) # default value is 0.1
 mutation_selection_rate=float(input('Please input the mutation selection rate: ') or 0.5)
 num_mutation_jobs=round(num_job*mutation_selection_rate)
-num_iteration=int(input('Please input number of iteration: ') or 2000) # default value is 2000
+num_iteration=int(input('Please input number of iteration: ') or 150) # default value is 2000
 
 
 start_time = time.time()
@@ -42,9 +30,9 @@ for i in range(population_size): #母體數10
     random_num=list(np.random.permutation(num_job)) # generate a random permutation of 0 to num_job-1
     population_list.append(random_num) # add to the population_list
 
-print(population_list)
+#print(population_list)
 
-
+T_best_list=[]
 for n in range(num_iteration):
     Tbest_now=99999999999           
     '''-------- crossover --------'''
@@ -137,18 +125,29 @@ for n in range(num_iteration):
         Tbest=Tbest_now
         sequence_best=copy.deepcopy(sequence_now)
     
+    T_best_list.append(Tbest)
+
     job_sequence_ptime=0
     num_tardy=0
     for k in range(num_job):
         job_sequence_ptime=job_sequence_ptime+p[sequence_best[k]]
         if job_sequence_ptime>d[sequence_best[k]]:
             num_tardy=num_tardy+1
+
 '''----------result----------'''
-print("optimal sequence",sequence_best)
-print("optimal value:%f"%Tbest)
-print("average tardiness:%f"%(Tbest/num_job))
-print("number of tardy:%d"%num_tardy)
-print('the elapsed time:%s'% (time.time() - start_time))
+print("optimal value: ",Tbest)
+print("optimal sequence: ",sequence_best)
+print("average tardiness: ",Tbest/num_job)
+print("number of tardy jobs: ",num_tardy)
+print('runnung_time: ',time.time() - start_time)
+
+
+import matplotlib.pyplot as plt
+
+plt.plot([i for i in range(len(T_best_list))],T_best_list,'b') #x,y為list資料
+plt.ylabel('total weighted tardiness',fontsize=15)
+plt.xlabel('generation',fontsize=15)
+plt.show()
 
 #'''--------plot gantt chart-------'''
 #import pandas as pd

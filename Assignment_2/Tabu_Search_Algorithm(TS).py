@@ -9,6 +9,7 @@ w = [10,5,1,5,10,1,5,10,5,1,5,10,10,5,1,10,5,5,1,5]
 tabusize=2
 Num_Iteration=100
 
+
 tabulist = np.zeros((tabusize, 2)) #零矩陣
 T_best_list=[]
 
@@ -98,7 +99,7 @@ for t in range(Num_Iteration):
 
     #print(tabulist)
     T_best_list.append(T_best)
-    print("全域解",T_best)
+    #print("全域解",T_best)
     #print("全域順序",x_best)
 
 
@@ -116,16 +117,16 @@ for l in range(Num_Jobs):
         tardy_time+=jobsequence_ptime - d[x_best[l]]
         num_tardy = num_tardy + 1
 avg_tardy_time=tardy_time/Num_Jobs
-# Report the Results
-# print(tabulist)
-# print(Tbest)
 
-print(x_best)
-print(num_tardy)
-print(tardy_time)
-print(avg_tardy_time)
-print(runnung_time)
+print("tabusize: ",tabusize)
+print("iteration: ",Num_Iteration)
+print("optimal value: ",T_best_list[-1])
+print("optimal job sequence: ",x_best)
+print("average tardiness: ",avg_tardy_time)
+print("number of tardy jobs: ",num_tardy)
+print("runnung_time: ",runnung_time)
 
+#print("number of tardy jobs:)
 import matplotlib.pyplot as plt
 
 plt.plot([i for i in range(len(T_best_list))],T_best_list,'b') #x,y為list資料

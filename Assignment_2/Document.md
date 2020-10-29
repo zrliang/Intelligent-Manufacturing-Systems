@@ -1,6 +1,10 @@
+# Tabu
+- 修改自 [Tabu Search Algorithm](https://github.com/PO-LAB/Intelligent-Manufacturing-Systems/blob/master/Tabu_Algorithm/Tabu_Algorithm.md)
+# GA 
+- 修改自 [GA flow shop](https://github.com/wurmen/Genetic-Algorithm-for-Job-Shop-Scheduling-and-NSGA-II/blob/master/implementation%20with%20python/GA-flowshop/GA%20for%20flow%20shop%20problem.md)
+
 # Parameter settings
 -  tabu size, crossover rate, mutation rate
-
 
 # Result
 - optimal function(job sequence) 
@@ -16,7 +20,7 @@
 2. GA 參數設計
 ![GA_design](Image/GA_design.PNG)
 
--- 參考資料
+# 參考資料
 
 [IMS課程作業 Tabu Search的Tabu size影響](https://www.youtube.com/watch?v=_mWdjidNBvs)
 

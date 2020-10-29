@@ -18,6 +18,7 @@
 從size=2~10
 
 2. GA 參數設計
+- 田口方法
 ![GA_design](Image/GA_design.PNG)
 
 # 參考資料
@@ -25,6 +26,8 @@
 [IMS課程作業 Tabu Search的Tabu size影響](https://www.youtube.com/watch?v=_mWdjidNBvs)
 
 [IMS課程作業 GA參數影響實驗過程](https://www.youtube.com/watch?v=s56X-qtxGNs)
+
 # Question
-1. tabu size 的決定
-2. GA的設計
+1. tabu size 的決定(大小的差別)
+2. GA的設計(參數設計、只能試嗎?)
+3. 怎麼兩種做比較(時間? 空間複雜度?) 結果好壞

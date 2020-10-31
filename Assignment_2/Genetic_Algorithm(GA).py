@@ -11,12 +11,12 @@ p=[10,10,13,4,9,4,8,15,7,1,9,3,15,9,11,6,5,14,18,3]
 d=[50,38,49,12,20,105,73,45,6,64,15,6,92,43,78,21,15,50,150,99]
 w=[10,5,1,5,10,1,5,10,5,1,5,10,10,5,1,10,5,5,1,5]
 
-population_size= 100
+population_size= 30
 crossover_rate=0.7
 mutation_rate= 0.1
 mutation_selection_rate=0.5 
 num_mutation_jobs=round(num_job*mutation_selection_rate)
-num_iteration=5000
+num_iteration=100
 
 
 start_time = time.time()
